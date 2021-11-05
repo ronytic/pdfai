@@ -1,5 +1,5 @@
 {
-    "name": "rony/pdfai",
+    "name": "ronaldnina/pdfai",
     "description": "Create a pdf file with fields filled with an acroform",
     "type": "library",
     "license": "MIT",
