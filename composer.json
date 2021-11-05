@@ -1,0 +1,30 @@
+{
+    "name": "rony/pdfai",
+    "description": "Create a pdf file with fields filled with an acroform",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ronald Nina",
+            "email": "ronald.nina.layme@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+          "src/pdfai.php",
+          ""
+        ]
+      },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/ronytic/pdfai",
+            "name": "GitHub"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "tmw/fpdm": "^2.9",
+        "fpdf/fpdf": "^1.83"
+    }
+}
