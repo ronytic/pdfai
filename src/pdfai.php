@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Class that allows creating a pdf file with fields filled with an acroform with images in base64
  *
@@ -103,7 +104,7 @@ class PDFAI
     public function mergePdfWithImages($fieldImages = [], $filePDFOutput = '')
     {
         try {
-            if($filePDFOutput != ''){
+            if ($filePDFOutput != '') {
                 $this->filePDFOutput = $filePDFOutput;
             }
             asort($fieldImages);
@@ -118,9 +119,10 @@ class PDFAI
                     foreach ($fieldImages[$i] as $fieldImage) {
                         if ($fieldImage['imageBase64'] != "") {
                             $imageContent = file_get_contents($fieldImage['imageBase64']);
+                            $imageType = $fieldImage['imageType'] ?? 'PNG';
                             $path = tempnam(sys_get_temp_dir(), 'prefix');
                             file_put_contents($path, $imageContent);
-                            $pdfImage->Image($path, $fieldImage['x'], $fieldImage['y'], $fieldImage['w'], $fieldImage['h'], 'PNG');
+                            $pdfImage->Image($path, $fieldImage['x'], $fieldImage['y'], $fieldImage['w'], $fieldImage['h'], $imageType);
                             unlink($path);
                         }
                     }
